@@ -3,6 +3,7 @@
 //imr for importing react
 //rafce is the best it creates arrow function with default export
 import React from 'react'
+import { Link } from 'react-router-dom'
 interface Product
 {
     id:number,
@@ -28,6 +29,9 @@ const products:Product[]=[
              {product.price}
           </tr>
         ))}
+        <tr>
+          <td><Link className="nav-link"  to="/edit/:id">Edit</Link></td>
+        </tr>
       </table>
     </div>
   )
