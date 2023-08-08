@@ -7,6 +7,9 @@ import { Demo } from './components/Demo';
 import Class_prac from './components/prac_class';
 import Prac_funct from './components/prac_funct';
 import { Prac } from './components/prac';
+import EventDemo from './components/EventDemo';
+import ParentComponent from './components/ParentComponent';
+import UseStateDemo from './components/UseStateDemo';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
       <Class_prac id={0} name={''}></Class_prac>
       <Prac_funct></Prac_funct>
       <Prac></Prac>
+      {/* <EventDemo></EventDemo> */}
+      <ParentComponent></ParentComponent>
+      <UseStateDemo></UseStateDemo>
     </div>
   );
 }

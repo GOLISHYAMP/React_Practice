@@ -1,6 +1,7 @@
 //rfc  for functional component
 //ccc  for class component
 //imr for importing react
+//rafce is the best it creates arrow function with default export
 import React from 'react'
 interface Product
 {
