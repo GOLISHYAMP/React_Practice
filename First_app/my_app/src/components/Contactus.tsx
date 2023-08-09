@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { myContext } from './ProductContext'
 const Contactus = () => {
-  return (
+  const msg = useContext(myContext);
+    return (
     <div>
-        <h1 style={{color:"green"}}>Welcome to Contactus page</h1>
+        <h1 style={{color:"green"}}>Welcome to Contactus page {msg}</h1>
     </div>
   )
 }

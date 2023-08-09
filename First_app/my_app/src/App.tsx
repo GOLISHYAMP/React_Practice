@@ -16,10 +16,25 @@ import Contactus from './components/Contactus';
 import { Navigations } from './components/Navigations';
 import PageNotFound from './components/PageNotFound';
 import EditProduct from './components/EditProduct';
+import AddProduct from './components/AddProduct';
+import { myContext, newContext} from './components/ProductContext';
+import { Product } from './utility/Product';
+import ProductDetails from './components/ProductDetails';
+
 
 function App() {
+  const msg = "hello Boss";
+  const products:Product[]=[
+    {id:1001,name:"Laptop",price:70000},
+    {id:1002,name:"Headphone",price:7000},
+    {id:1003,name:"Tablet",price:7000},
+    {id:1004,name:"TV",price:50000}];
   return (
     <div>
+      <myContext.Provider value={msg}>
+      <newContext.Provider value={products}>
+      
+      
       {/* <DemoFunctional></DemoFunctional>
       <ClassComponent></ClassComponent>
       <Demo></Demo>
@@ -37,11 +52,15 @@ function App() {
           <Route path = "/aboutus/:name" element= {<Aboutus></Aboutus>}></Route>
           <Route path = "/contactus" element= {<Contactus></Contactus>}></Route>
           <Route path = "/edit/:id" element= {<EditProduct></EditProduct>}></Route>
-
+          <Route path="/addproduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="/getProduct/:id" element= {<ProductDetails></ProductDetails>}></Route>
           <Route path = "/*" element= {<PageNotFound></PageNotFound>}></Route>
+          
 
         </Routes>
       </Router>
+      </newContext.Provider>
+        </myContext.Provider>
 
     </div>
   );

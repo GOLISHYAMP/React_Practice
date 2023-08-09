@@ -20,7 +20,16 @@ export const Navigations = () => {
         <li className="nav-item">
           <Link className="nav-link"  to="/contactus">Contact us</Link>
         </li>
-        
+        <li className="nav-item">
+          <Link className="nav-link"  to="/edit/:id">Edit Product</Link>
+        </li>
+        {/* <td><Link className="nav-link" to="/addproduct">AddProduct_clickHere</Link></td> */}
+        <li className="nav-item">
+          <Link className="nav-link"  to="/addproduct">Add Product</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link"  to="/getProduct/:id">Get Product Details</Link>
+        </li>
       </ul>
     </div>
   </div>
