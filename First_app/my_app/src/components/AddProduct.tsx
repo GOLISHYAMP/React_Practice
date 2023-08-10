@@ -3,18 +3,21 @@ import { useForm } from 'react-hook-form'
 import { Product } from '../utility/Product';
 import { newContext } from './ProductContext';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const AddProduct = () => {
     const {register, handleSubmit, formState : {errors}} = useForm();
-    const products = useContext(newContext);
+    // const products = useContext(newContext);
+    
     const navigate = useNavigate();
 
     const handleFormSubmit = (data:any) => {
       console.log(data);
-      products.push(data);
+      axios.post("http://localhost:5000/products",data);
+      // products.push(data);
       // console.log(products);
-      navigate("/");
+      navigate("/demo");
     }
    
     

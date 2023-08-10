@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1001,
+      "name": "Laptop",
+      "price": 70000
+    },
+    {
+      "id": 1002,
+      "name": "Headphone",
+      "price": 7000
+    },
+    {
+      "id": 1003,
+      "name": "Tablet",
+      "price": 7000
+    },
+    {
+      "id": 1004,
+      "name": "TV",
+      "price": 50000
+    },
+    {
+      "id": 1005,
+      "name": "Pen",
+      "price": 200
+    },
+    {
+      "id": "500",
+      "name": "ring",
+      "price": "33445"
+    },
+    {
+      "id": "200",
+      "name": "hat",
+      "price": "100"
+    }
+  ]
+}

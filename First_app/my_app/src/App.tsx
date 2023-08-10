@@ -20,6 +20,8 @@ import AddProduct from './components/AddProduct';
 import { myContext, newContext} from './components/ProductContext';
 import { Product } from './utility/Product';
 import ProductDetails from './components/ProductDetails';
+import Login from './components/Login';
+import Api_call from './components/Api_call';
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
     {id:1004,name:"TV",price:50000}];
   return (
     <div>
+      {/* <Api_call></Api_call> */}
       <myContext.Provider value={msg}>
       <newContext.Provider value={products}>
       
@@ -48,7 +51,8 @@ function App() {
         <Navigations></Navigations>
         <Routes>
         
-          <Route path = "/" element= {<Demo></Demo>}></Route>
+        <Route path = "/" element= {<Login></Login>}></Route>
+          <Route path = "/demo" element= {<Demo></Demo>}></Route>
           <Route path = "/aboutus/:name" element= {<Aboutus></Aboutus>}></Route>
           <Route path = "/contactus" element= {<Contactus></Contactus>}></Route>
           <Route path = "/edit/:id" element= {<EditProduct></EditProduct>}></Route>

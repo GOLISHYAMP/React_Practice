@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 export const Navigations = () => {
+  const [isLoggedIn,setLoggedIn] = useState(false);
+  const logout = ()=>{
+    sessionStorage.clear();
+    console.log("cleared");
+  }
+  useEffect(() => {
+    if (sessionStorage.getItem("emailId") != null){
+      setLoggedIn(true);
+    } 
+
+    return () => {
+      
+    }
+  })
+  
   return (
     <div>
        <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,21 +29,27 @@ export const Navigations = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
-        <li className="nav-item">
+        {isLoggedIn?<li className="nav-item">
+          <Link className="nav-link"  to="/demo">Demo Page</Link>
+        </li>:""}
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/aboutus/:name">About us</Link>
-        </li>
-        <li className="nav-item">
+        </li>:""}
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/contactus">Contact us</Link>
-        </li>
-        <li className="nav-item">
+        </li>:""}
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/edit/:id">Edit Product</Link>
-        </li>
+        </li>:""}
         {/* <td><Link className="nav-link" to="/addproduct">AddProduct_clickHere</Link></td> */}
-        <li className="nav-item">
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/addproduct">Add Product</Link>
-        </li>
-        <li className="nav-item">
+        </li>:""}
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/getProduct/:id">Get Product Details</Link>
+        </li>:""}
+        <li className="nav-item">
+          <Link className="nav-link"  to="/" onClick={logout}>Logout</Link>
         </li>
       </ul>
     </div>

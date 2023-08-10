@@ -2,9 +2,12 @@
 //ccc  for class component
 //imr for importing react
 //rafce is the best it creates arrow function with default export
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { newContext } from './ProductContext'
+import axios from 'axios';
+import { Product } from '../utility/Product';
+
 
 // interface Product
 // {
@@ -15,14 +18,23 @@ import { newContext } from './ProductContext'
 export const Demo = () => {
 
 
-  const products = useContext(newContext);
+  // const products = useContext(newContext);
+  const [products,setproducts] = useState<Product[] | null>();
+  useEffect(() => {
+    axios.get("http://localhost:5000/products").then((response)=>
+    {
+      setproducts(response.data);
+    }).catch(error=>console.log("Got error : "+error));
+  }, [])
+  
   // const adding:any = useContext(newContext);
   // products.push(adding[0]);
   // console.log(adding);
   // products.push({id:1001,name:"Laptop",price:70000});
   return (
+    
     <div>
-        
+      
         <table className='table'>
         <thead>
           <tr>
@@ -31,7 +43,7 @@ export const Demo = () => {
             <th scope="col">Price</th>
           </tr>
         </thead>
-        {products.map(product => (
+        {products?.map(product => (
           // <tr key={product.id}>
           <tr>
             <td scope='col'>{product.id}</td>
