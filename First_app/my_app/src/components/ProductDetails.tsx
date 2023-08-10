@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { newContext } from './ProductContext';
+import { Navigations } from './Navigations';
 
 const ProductDetails = () => {
     console.log("hello");
@@ -13,6 +14,8 @@ const ProductDetails = () => {
     console.log(pd)
   return (
     <div>
+        <Navigations></Navigations>
+
         <p>
             <h3>Id : {pd.id}</h3><br />
             <h3>Name : {pd.name}</h3><br />

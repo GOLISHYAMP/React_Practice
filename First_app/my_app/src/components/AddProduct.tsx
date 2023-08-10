@@ -4,6 +4,7 @@ import { Product } from '../utility/Product';
 import { newContext } from './ProductContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Navigations } from './Navigations';
 
 
 const AddProduct = () => {
@@ -23,6 +24,8 @@ const AddProduct = () => {
     
   return (
     <div>
+        <Navigations></Navigations>
+
         <form onSubmit={handleSubmit(handleFormSubmit)}>
             <label>ProductId</label>
             <input type="number" id="id" {...register('id', {required:true})}  />

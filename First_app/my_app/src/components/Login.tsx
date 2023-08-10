@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+import { Navigations } from './Navigations';
 
 const Login = () => {
     const {register, handleSubmit, formState : {errors}} = useForm();
@@ -18,6 +19,8 @@ const Login = () => {
       }
   return (
     <div>
+        <Navigations></Navigations>
+
         <form  onSubmit={handleSubmit(handleLogin)}>
              <h1>Login Page</h1>
             <label className='form-label'>Email</label>

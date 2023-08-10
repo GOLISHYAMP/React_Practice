@@ -48,7 +48,7 @@ function App() {
       <ParentComponent></ParentComponent>
       <UseStateDemo></UseStateDemo> */}
       <Router>
-        <Navigations></Navigations>
+        {/* <Navigations></Navigations> */}
         <Routes>
         
         <Route path = "/" element= {<Login></Login>}></Route>

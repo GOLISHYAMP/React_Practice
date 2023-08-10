@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { newContext } from './ProductContext'
 import axios from 'axios';
 import { Product } from '../utility/Product';
+import { Navigations } from './Navigations';
 
 
 // interface Product
@@ -34,6 +35,7 @@ export const Demo = () => {
   return (
     
     <div>
+        <Navigations></Navigations>
       
         <table className='table'>
         <thead>

@@ -48,9 +48,9 @@ export const Navigations = () => {
         {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/getProduct/:id">Get Product Details</Link>
         </li>:""}
-        <li className="nav-item">
+        {isLoggedIn?<li className="nav-item">
           <Link className="nav-link"  to="/" onClick={logout}>Logout</Link>
-        </li>
+        </li>:""}
       </ul>
     </div>
   </div>
