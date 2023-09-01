@@ -10,7 +10,7 @@ function App() {
       {/* name = "Shyam" */}
       <Header ></Header>
       <h1>Hii bro</h1>
-      <EventDemo></EventDemo>
+      {/* <EventDemo></EventDemo> */}
     </div>
   );
 }
