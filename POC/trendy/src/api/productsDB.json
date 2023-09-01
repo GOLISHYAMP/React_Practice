@@ -1,0 +1,23 @@
+{
+    "products": [
+      {
+        "id": 1001,
+        "name": "Shirt",
+        "price": 1000,
+        "color": "Blue"
+      },
+      {
+        "id": 1002,
+        "name": "Googles",
+        "price": 3000,
+        "color": "Black"
+      },
+      {
+        "id": 1003,
+        "name": "Shoes",
+        "price": 14000,
+        "color": "Grey"
+      }
+      
+    ]
+  }

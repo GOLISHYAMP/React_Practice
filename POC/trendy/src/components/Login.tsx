@@ -11,13 +11,17 @@ const Login = () => {
         if(data.email === "shyam@gmail.com" && data.pwd==="shyam")
         {
             sessionStorage.setItem("emailId",data.email);
-            navigate("/demo");
+            navigate("/");
         }
         else
         {
             alert("Invalid credentials");
         }
-      }
+      };
+      const submitButtonStyle = {
+        background:"white",
+        "margin-left": '25px',
+      };
 
   return (
     <div>
@@ -36,9 +40,10 @@ const Login = () => {
             {errors.pwd && errors.pwd.type === "required" && <span>Password is required</span>}
             <br />
             <br />
+            <div style={{display: "flex"}}>
             <input type="submit" id="loginBtn" value="Login"></input>
-            <input style={{background:"white"}} type="button" id="signBtn" value="Signin"></input>
-
+            <input style={submitButtonStyle} type="button" id="signBtn" value="Signup"></input>
+            </div>
         </form>
     </div>
     </div>
